@@ -298,21 +298,88 @@ Don&#39;t forget to activate `venv` by using this command: `source .venv/bin/act
 </ol>
 <h2 is-upgraded>Check Chat Mode</h2>
 <p>Confirm the chat mode is set to &#34;Ask&#34;.</p>
+<p class="image-container"><img alt="Ask Copilot" src="img/532af96e776eb232.png"></p>
 <h2 is-upgraded>Request File Explanation</h2>
 <ol type="1">
 <li>Attach one of the files in the chat field.</li>
 <li>Enter the prompt &#34;Please explain this entire file.&#34;</li>
 <li>Press Enter and Copilot Chat will explain the entire file</li>
 </ol>
+<p class="image-container"><img alt="Explanation from Copilot" src="img/ed28d5190282db60.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="[WIP] Documentation" duration="0">
+      <google-codelab-step label="[WIP] Custom Instructions" duration="10">
+        <h2 is-upgraded>Create Custom Copilot Instruction</h2>
+<p>Let&#39;s create a <a href="https://copilot-instructions.md/" target="_blank">custom instruction</a> that Copilot will follow before executing prompts in chat.</p>
+<pre><code language="language-bash" class="language-bash">mkdir .github &amp;&amp; cd .github
+touch copilot-instructions.md
+</code></pre>
+<p>Then, inside the file <code>copilot-instructions.md</code>, put this text:</p>
+<pre><code language="language-text" class="language-text">**Prompt:**
+Always ensure that any Python command is run inside an activated virtual environment (`.venv`).
+Before running a Python command, activate the virtual environment using:
+
+source .venv/bin/activate
+
+Then run your Python command as needed.
+
+**Instruction:**
+Before making any big changes to the project, always check the architecture documentation in `docs/architecture.md` to ensure alignment with the overall design and goals.
+</code></pre>
+<p>That custom instruction tells Copilot to:</p>
+<ol type="1">
+<li>Make sure to run the Python file in an activated virtual environment</li>
+<li>Always check the architecture document before making any big changes</li>
+</ol>
+<p class="image-container"><img alt="Custom instructions" src="img/e3105fa17ed22ee.png"></p>
+<p>You can add other things that you want Copilot to do with each request in that file.</p>
+<p>Here are some examples of great prompts that you can use, modify, and adjust: <a href="https://copilot-instructions.md/prompts.html" target="_blank">Godlike Prompts</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Unit Tests" duration="10">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Product Documentation" duration="10">
         <h2 is-upgraded>Create User Flow</h2>
 <pre><code language="language-text" class="language-text">Create a documentation about how to use this web application. Draw a user flow chart and sequence diagram, use Mermaid format.
 </code></pre>
 
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Github MCP" duration="15">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Github Copilot Online" duration="5">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Automatic Issue Creation and Coding Agent" duration="15">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Implement PR From Coding Agent" duration="5">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Update The Documents" duration="15">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="[WIP] Congratulations 🎉" duration="5">
+        
 
       </google-codelab-step>
     

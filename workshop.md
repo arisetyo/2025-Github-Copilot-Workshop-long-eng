@@ -353,17 +353,110 @@ Let's have Copilot Chat explain this code.
 
 Confirm the chat mode is set to "Ask".
 
+![Ask Copilot](github-copilot-workshop-id/img/__ask-1.png)
+
 ### Request File Explanation
 
 1. Attach one of the files in the chat field.
 2. Enter the prompt "Please explain this entire file."
 3. Press Enter and Copilot Chat will explain the entire file
 
+![Explanation from Copilot](github-copilot-workshop-id/img/__ask-2.png)
 
-## [WIP] Documentation
+
+## Custom Instructions
+Duration: 10
+
+### Create Custom Copilot Instruction
+
+Let's create a [custom instruction](https://copilot-instructions.md/) that Copilot will follow before executing prompts in chat.
+
+```bash
+mkdir .github && cd .github
+touch copilot-instructions.md
+```
+
+Then, inside the file `copilot-instructions.md`, put this text:
+
+```text
+**Prompt:**
+Always ensure that any Python command is run inside an activated virtual environment (`.venv`).
+Before running a Python command, activate the virtual environment using:
+
+source .venv/bin/activate
+
+Then run your Python command as needed.
+
+**Instruction:**
+Before making any big changes to the project, always check the architecture documentation in `docs/architecture.md` to ensure alignment with the overall design and goals.
+```
+
+That custom instruction tells Copilot to:
+
+1. Make sure to run the Python file in an activated virtual environment
+2. Always check the architecture document before making any big changes
+
+![Custom instructions](github-copilot-workshop-id/img/__custom.png)
+
+You can add other things that you want Copilot to do with each request in that file.
+
+Here are some examples of great prompts that you can use, modify, and adjust: [Godlike Prompts](https://copilot-instructions.md/prompts.html)
+
+
+## [WIP] Unit Tests
+Duration: 10
+
+
+## [WIP] Product Documentation
+Duration: 10
 
 ### Create User Flow
 
 ```text
 Create a documentation about how to use this web application. Draw a user flow chart and sequence diagram, use Mermaid format.
 ```
+
+## [WIP] Github MCP
+Duration: 15
+
+
+## [WIP] Github Copilot Online
+Duration: 5
+
+
+## [WIP] Automatic Issue Creation and Coding Agent
+Duration: 15
+
+
+## [WIP] Implement PR From Coding Agent
+Duration: 5
+
+
+## [WIP] Update The Documents
+Duration: 15
+
+
+## Congratulations 🎉
+Duration: 5
+
+### What We Learned Today
+
+In this workshop, we learned using Github Copilot to do the following:
+
+- Using specifications to develop an application
+- Code explanation and improvement
+- Utilizing agent functionality
+- Adding issues and development of new features
+
+### Next Steps
+
+- Try using Copilot in actual projects
+- Challenge more complex application development
+- Keep up with new Copilot features
+
+### Resources
+
+- [GitHub Copilot Documentation](https://docs.github.com/copilot)
+- [GitHub Copilot Best Practices](https://docs.github.com/copilot/using-github-copilot/best-practices-for-using-github-copilot)
+
+Great work!
