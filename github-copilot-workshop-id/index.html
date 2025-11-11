@@ -349,6 +349,8 @@ Then in the readme file, add explanation on how to run the unit tests.
 </code></pre>
 <p>As we can see below, Copilot created a to-do list to complete the task from the previous prompt. Using the custom instruction we have added in the previous slide, Copilot first check the architecture document to provide a more accurate solution.</p>
 <p class="image-container"><img alt="Unit test request" src="img/98effe6470e40459.png"></p>
+<p>We can ask Copilot to run the test from the Chat panel. This way it will check the result from the terminal automatically and make adjustments as necessary. We can always do it manually by referring to the added section in the readme file.</p>
+<p class="image-container"><img alt="Unit test result" src="img/17d4ce778a3947c9.png"></p>
 
 
       </google-codelab-step>
@@ -358,24 +360,60 @@ Then in the readme file, add explanation on how to run the unit tests.
 <pre><code language="language-text" class="language-text">Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.
 </code></pre>
 <p>We can use your favorite markdown viewer plugin to check the result, including the charts. Because the charts are created using Mermaid, you can also copy-paste the Mermaid code into Mermaid&#39;s tool.</p>
-<p class="image-container"><img alt="App documentation" src="img/af32d8f4c778e3ab.png"><img alt="App documentation" src="img/409e46bf3650b89c.png"></p>
+<p class="image-container"><img alt="App documentation" src="img/af32d8f4c778e3ab.png"></p>
+<p class="image-container"><img alt="App documentation" src="img/409e46bf3650b89c.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="[WIP] Github MCP" duration="10">
-        
+      <google-codelab-step label="Adding Github MCP Server (Optional)" duration="10">
+        <p>By using Model Context Protocol (MCP) servers, you can extend Copilot&#39;s functionality.</p>
+<p>In this slide we&#39;ll learn how to add a custom MCP to VSCode. In VSCode, we can also search for available MCPs in the <code>Extensions</code> panel.</p>
+<h2 is-upgraded>Step 1: Add MCP Server</h2>
+<ol type="1">
+<li>Open command palette in VSCode: <code>Ctrl+Shift+P</code> (Windows/Linux) / <code>Cmd+Shift+P</code> (Mac)</li>
+<li>Type and select <code>mcp: add server</code></li>
+</ol>
+<p class="image-container"><img alt="MCP Add Server" src="img/d69758964965d34.png"></p>
+<ol type="1" start="3">
+<li>Select <strong>HTTP</strong></li>
+<li>Enter server URL: <code>https://api.githubcopilot.com/mcp/</code></li>
+<li>Enter a name in the Server ID field. For example: <code>my-github-mcp-server</code>. Or press Enter to skip.</li>
+<li>Select <strong>Save to this workspace</strong> for the save location</li>
+<li>Authenticate with your GitHub account</li>
+</ol>
+<h2 is-upgraded>Step 2: Verify MCP Server Startup</h2>
+<p>MCP server configuration is saved in <code>.vscode/mcp.json</code>.</p>
+<p class="image-container"><img alt="MCP JSON Config" src="img/45985ec9af4a86e.png"></p>
+<h2 is-upgraded>Step 3: Enable Tools</h2>
+<ol type="1">
+<li>Click the tools button in Copilot Chat</li>
+</ol>
+<p class="image-container"><img alt="MCP Tools Button" src="img/f53152abe76306d8.png"></p>
+<ol type="1" start="2">
+<li>Confirm the GitHub MCP server appears in the list</li>
+<li>Check the checkbox to enable</li>
+</ol>
+<p class="image-container"><img alt="MCP Enable Tools" src="img/e6bcb48e59fff098.png"></p>
+<p>Now you can reference GitHub information directly in Copilot Chat.</p>
+<aside class="special"><p><strong>Tip</strong>: Using MCP servers allows Copilot to directly access repository information, Issues, Pull Requests, etc., providing more detailed answers and suggestions.</p>
+</aside>
+
 
       </google-codelab-step>
     
-      <google-codelab-step label="[WIP] Github Copilot Online" duration="5">
-        <p>Copilot is also available on Github&#39;s website. Let&#39;s see some of the things Copilot can do for us in the Github website.</p>
-<h2 is-upgraded>PR Description</h2>
-<p>Ask Copilot to add Pull Request description.</p>
+      <google-codelab-step label="Github Copilot Online" duration="5">
+        <p>Copilot is also available on Github&#39;s website. Click on <a href="https://github.com/copilot/" target="_blank">this link</a> to open Copilot on Github.</p>
+<p class="image-container"><img alt="Copilot Online" src="img/a7c200d9745d6129.png"></p>
+<p>Let&#39;s see some of the things Copilot can do for us in the Github website.</p>
+<h2 is-upgraded>Add PR Description</h2>
+<p>We can ask Copilot to add Pull Request description.</p>
 <p class="image-container"><img alt="Request PR summary" src="img/18ffabfac342e07b.png"></p>
-<h2 is-upgraded>PR Review</h2>
-<p>Add Copilot as a reviewer to a Pull Request.</p>
+<p>It will create a comprehensive PR description based on the commits in the branch that we wanted to merge.</p>
 <p class="image-container"><img alt="PR summary result" src="img/ef2ee5de09cd6b76.png"></p>
+<h2 is-upgraded>Add AS PR Reviewer</h2>
+<p>We can also add Copilot as a reviewer to a Pull Request. Very handy if you&#39;re working solo on a project.</p>
+<p class="image-container"><img alt="PR Reviewer" src="img/a8929f219cf37bb6.png"></p>
 
 
       </google-codelab-step>

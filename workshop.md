@@ -469,41 +469,93 @@ We can use your favorite markdown viewer plugin to check the result, including t
 Because the charts are created using Mermaid, you can also copy-paste the Mermaid code into Mermaid's tool.
 
 ![App documentation](github-copilot-workshop-id/img/__docs-1.png)
+
+
 ![App documentation](github-copilot-workshop-id/img/__docs-2.png)
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 13 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Adding Github MCP Server
-Duration: 5
+## Adding Github MCP Server (Optional)
+Duration: 10
 
 By using Model Context Protocol (MCP) servers, you can extend Copilot's functionality.
 
 In this slide we'll learn how to add a custom MCP to VSCode. In VSCode, we can also search for available MCPs in the `Extensions` panel.
 
+### Step 1: Add MCP Server
 
+1. Open command palette in VSCode: `Ctrl+Shift+P` (Windows/Linux) / `Cmd+Shift+P` (Mac)
+2. Type and select `mcp: add server`
+
+![MCP Add Server](github-copilot-workshop-id/img/__mcp-add.png)
+
+3. Select **HTTP**
+4. Enter server URL: `https://api.githubcopilot.com/mcp/`
+5. Enter a name in the Server ID field. For example: `my-github-mcp-server`. Or press Enter to skip.
+6. Select **Save to this workspace** for the save location
+7. Authenticate with your GitHub account
+
+### Step 2: Verify MCP Server Startup
+
+MCP server configuration is saved in `.vscode/mcp.json`.
+
+![MCP JSON Config](github-copilot-workshop-id/img/__mcp-conf.png)
+
+### Step 3: Enable Tools
+
+1. Click the tools button in Copilot Chat
+
+![MCP Tools Button](github-copilot-workshop-id/img/__mcp-btn.png)
+
+2. Confirm the GitHub MCP server appears in the list
+3. Check the checkbox to enable
+
+![MCP Enable Tools](github-copilot-workshop-id/img/__mcp-opts.png)
+
+Now you can reference GitHub information directly in Copilot Chat.
+
+> aside positive
+>
+> **Tip**: Using MCP servers allows Copilot to directly access repository information, Issues, Pull Requests, etc., providing more detailed answers and suggestions.
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 14 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## [WIP] Github Copilot Online
+## Github Copilot Online
 Duration: 5
 
-Copilot is also available on Github's website. Let's see some of the things Copilot can do for us in the Github website.
+Copilot is also available on Github's website. Click on [this link](https://github.com/copilot/) to open Copilot on Github.
 
-### PR Description
+![Copilot Online](github-copilot-workshop-id/img/__cp-ol.png)
 
-Ask Copilot to add Pull Request description.
+Let's see some of the things Copilot can do for us in the Github website.
+
+### 1. Add PR Description
+
+We can ask Copilot to add Pull Request description.
 
 ![Request PR summary](github-copilot-workshop-id/img/__pr-summary.png)
 
-### PR Review
-
-Add Copilot as a reviewer to a Pull Request.
+It will create a comprehensive PR description based on the commits in the branch that we wanted to merge.
 
 ![PR summary result](github-copilot-workshop-id/img/__pr-summary-result.png)
+
+
+### 2. Add As PR Reviewer
+
+We can also add Copilot as a reviewer to a Pull Request. Very handy if you're working solo on a project.
+
+![PR Reviewer](github-copilot-workshop-id/img/__reviewer.png)
+
+Copilot would check all the files in the PR and make appropriate comments.
+Like in actual PR reviews, you can choose to follow or ignore the comments.
+
+> aside negative
+>
+> **Note**: Depending on the PR size, you might need to wait for Copilot to finish creating a summary or adding PR reviews.
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -524,7 +576,7 @@ Duration: 5
 <!-- = = = = = = = = = = = = =  SLIDE 17 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## [WIP] Update The Documents
-Duration: 15
+Duration: 5
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
