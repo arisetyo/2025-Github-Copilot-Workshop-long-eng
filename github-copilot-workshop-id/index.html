@@ -183,6 +183,15 @@
         <h2 is-upgraded>Python prerequisites</h2>
 <p>Follow the instructions in the <code>README.md</code> file to install <code>uv</code> (if you don&#39;t have it yet) and to create the virtual environment.</p>
 <h2 is-upgraded>Github MCP</h2>
+<ol type="1">
+<li>From Github MCP Registry</li>
+</ol>
+<p>Go to <a href="https://github.com/mcp/" target="_blank">Github MCP Registry</a> and search for Github MCP.</p>
+<p>Click <code>Install in VS Code</code>.</p>
+<p class="image-container"><img alt="Github MCP Registry" src="img/fde5d0de883dc5ee.png"></p>
+<ol type="1" start="2">
+<li>From VSCode</li>
+</ol>
 <p>Install the <a href="https://github.com/mcp/github/github-mcp-server" target="_blank">Github MCP Server</a> in VSCode</p>
 <p class="image-container"><img alt="Github MCP Server" src="img/6bb5116ee2c3155.png"></p>
 
@@ -208,7 +217,10 @@
 </ol>
 <pre><code language="language-text" class="language-text">This space will be used for designing and improving a Pomodoro web application that we are going to build.
 </code></pre>
-<p>Copilot will then learn about our project and provide some suggestions. In the next chat, attach the screenshot image <code>new_pomodoro_ss.png</code> and enter this prompt:</p>
+<p>Copilot will then learn about our project and provide some suggestions.</p>
+<h2 is-upgraded>Architecture Request</h2>
+<p class="image-container"><img alt="Request" src="img/657b3296b53e47fb.png"></p>
+<p>In the next chat, attach the screenshot image <code>new_pomodoro_ss.png</code> and enter this prompt:</p>
 <pre><code language="language-text" class="language-text">We plan to create a simple Pomodoro timer web app in this project to learn the aspects of Github Copilot. The attached image is a UI mock for that app. What design should we proceed with to create this app using Flask and HTML/CSS/JavaScript?
 I want the timer functionality to be handled on the frontend using JavaScript. The backend should serves the HTML page and static assets, and to store the status of ongoing or finished sessions in a log file.
 Please suggest an architecture.
@@ -235,12 +247,12 @@ Please suggest an architecture.
 <p>Then, enter the following prompt:</p>
 <pre><code language="language-text" class="language-text">Based on the attached document, please create step-by-step development plan that can be followed by the coding agents.
 Please suggest what granularity should be used to implement functions in an easy-to-test steps.
-Save the development plan in a file called `plan.md`.
 </code></pre>
 <aside class="special"><p>If there are points that should be improved or considerations that are lacking in this plan, try pointing them out. For example, the following suggestion: &#34;Considering the ease of unit testing, please also list any improvements or additions needed to the current plan.&#34;</p>
 </aside>
-<aside class="warning"><p>Don&#39;t forget to click &#34;Keep&#34; to save the changes.</p>
-</aside>
+<p>Change to <code>Agent</code> mode and prompt: &#34;Save the development plan in a file called <code>plan.md</code>.&#34; (or you can always do that manually). Don&#39;t forget to click &#34;Keep&#34; to save the changes.</p>
+<p class="image-container"><img alt="Planning" src="img/b1b472ffadbc11e5.png"></p>
+<p>Now we have two specifications file: <code>architecture.md</code> and <code>plan.md</code>. These will be the documents Copilot refer to in developing the Pomodoro app.</p>
 <aside class="special"><p>When a conversation with Copilot Chat reaches a conclusion, you can give clearer instructions to Copilot by starting a new conversation. To start a new conversation, click the &#34;New conversation&#34; button at the top of the chat window. At that time, content you want to reference in future chats, like the architectural content this time, is convenient to write out and save to files as we did here.</p>
 </aside>
 
@@ -253,8 +265,15 @@ Save the development plan in a file called `plan.md`.
 <pre><code>Before making any big changes to the project, always check the architecture documentation in `architecture.md` to ensure alignment with the overall design and goals.
 </code></pre>
 <p class="image-container"><img alt="Custom Instructions" src="img/9f6e9d02033bde7a.png"></p>
-<aside class="special"><p>Note on the screenshot above that Copilot also provide some inline suggestions. You can add Copilot suggestions or your own instruction to this to make Copilot works better in your project. You can add lines like &#34;Always add documentation to all new functions.&#34; for example.</p>
+<aside class="special"><p>Note on the screenshot above that Copilot also provide some inline suggestions. You can add Copilot suggestions or your own instruction to this to make Copilot works better in your project. You can add lines like  for example.</p>
 </aside>
+<p>That custom instruction tells Copilot to:</p>
+<ol type="1">
+<li>Make sure to run the Python file in an activated virtual environment</li>
+<li>Always check the architecture document before making any big changes</li>
+</ol>
+<p>You can add other things in that file that you want Copilot to do with each request, for example: &#34;Always add documentation to all new functions.&#34;.</p>
+<p>Here are some great examples of prompts that you can use, modify, and adjust for your custom instructions: <a href="https://copilot-instructions.md/prompts.html" target="_blank">Godlike Prompts</a></p>
 
 
       </google-codelab-step>
@@ -273,16 +292,13 @@ If there are additional considerations needed, please ask me questions.
 <li><strong>Basic Files</strong>: Are the necessary basic files (app.py, HTML templates, CSS files, etc.) created?</li>
 <li><strong>Operation Check</strong>: Perform simple operation tests to see if any errors occur?</li>
 </ol>
-<aside class="warning"><p>Copilot could sometimes forget to activate the virtual environment. Just tell it to activate venv and run the Python application on the same terminal if it forgot to do that.</p>
-</aside>
 <p>Below is the result of step 1 implementation in my case. What kind of application this becomes at this stage will differ from person to person.</p>
-<p class="image-container"><img alt="Example Implementation from Copilot" src="img/252bf13f5d995622.png"></p>
-<p class="image-container"><img alt="Example Result" src="img/5a6f0fea7e8b8c44.png"></p>
+<p class="image-container"><img alt="Result" src="img/bacf0cbf5edec6e4.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Explain Code" duration="10">
+      <google-codelab-step label="Explain Code" duration="5">
         <p>Let&#39;s have Copilot Chat explain this code.</p>
 <h2 is-upgraded>Open Copilot Chat</h2>
 <ol type="1">
@@ -303,39 +319,77 @@ If there are additional considerations needed, please ask me questions.
 
       </google-codelab-step>
     
-      <google-codelab-step label="Custom Instructions" duration="10">
-        <h2 is-upgraded>Create Custom Copilot Instruction</h2>
-<p>Let&#39;s create a <a href="https://copilot-instructions.md/" target="_blank">custom instruction</a> that Copilot will follow before executing prompts in chat.</p>
-<pre><code language="language-bash" class="language-bash">mkdir .github &amp;&amp; cd .github
-touch copilot-instructions.md
+      <google-codelab-step label="Product Documentation" duration="5">
+        <p>Let&#39;s ask Copilot to add more documentations:</p>
+<pre><code language="language-text" class="language-text">Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.
 </code></pre>
-<p>Then, inside the file <code>copilot-instructions.md</code>, put this text:</p>
-<pre><code language="language-text" class="language-text">**Prompt:**
-Always ensure that any Python command is run inside an activated virtual environment (`.venv`).
-Before running a Python command, activate the virtual environment using:
+<p>We can use your favorite markdown viewer plugin to check the result, including the charts. Because the charts are created using Mermaid, you can also copy-paste the Mermaid code into Mermaid&#39;s tool.</p>
+<p class="image-container"><img alt="App documentation" src="img/af32d8f4c778e3ab.png"></p>
+<p class="image-container"><img alt="App documentation" src="img/409e46bf3650b89c.png"></p>
 
-source .venv/bin/activate
 
-Then run your Python command as needed.
-
-**Instruction:**
-Before making any big changes to the project, always check the architecture documentation in `docs/architecture.md` to ensure alignment with the overall design and goals.
-</code></pre>
-<p>That custom instruction tells Copilot to:</p>
+      </google-codelab-step>
+    
+      <google-codelab-step label="Prompt Files and Custom Agents (Optional)" duration="10">
+        <h2 is-upgraded>Prompt Files</h2>
+<p>Prompt files define reusable prompts for specific tasks that you can invoke when needed.</p>
+<h3 is-upgraded>Create a &#34;code explainer&#34; agent</h3>
 <ol type="1">
-<li>Make sure to run the Python file in an activated virtual environment</li>
-<li>Always check the architecture document before making any big changes</li>
+<li>Create a file: <code>.github/prompts/explain-code.prompt.md</code></li>
+<li>Add this into the file:</li>
 </ol>
-<p class="image-container"><img alt="Custom instructions" src="img/e3105fa17ed22ee.png"></p>
-<p>You can add other things that you want Copilot to do with each request in that file.</p>
-<p>Here are some examples of great prompts that you can use, modify, and adjust: <a href="https://copilot-instructions.md/prompts.html" target="_blank">Godlike Prompts</a></p>
+<pre><code language="language-text" class="language-text">---
+agent: &#39;agent&#39;
+description: &#39;Generate a clear code explanation with examples&#39;
+---
+
+Explain the following code in a clear, beginner-friendly way:
+
+Code to explain: ${input:code:Paste your code here}
+Target audience: ${input:audience:Who is this explanation for? (e.g., beginners, intermediate developers, etc.)}
+
+Please provide:
+
+* A brief overview of what the code does
+* A step-by-step breakdown of the main parts
+* Explanation of any key concepts or terminology
+* A simple example showing how it works
+* Common use cases or when you might use this approach
+
+Use clear, simple language and avoid unnecessary jargon.
+</code></pre>
+<p class="image-container"><img alt="Explainer" src="img/c7952b98bf7adc56.png"></p>
+<h2 is-upgraded>Custom Agents</h2>
+<p>Other than the default agent provided by Copilot, you can create your own custom agent for specific use case.</p>
+<h3 is-upgraded>Create a &#34;readme creator&#34; agent</h3>
+<ol type="1">
+<li>Create a file: <code>.github/agents/readme-creator-agent.md</code></li>
+<li>Add this into the file:</li>
+</ol>
+<pre><code language="language-text" class="language-text">---
+name: readme-creator
+description: Agent specializing in creating and improving README files
+---
+
+You are a documentation specialist focused on README files. Your scope is limited to README files or other related documentation files only - DO NOT modify or analyze code files.
+
+Focus on the following instructions:
+- Create and update README.md files with clear project descriptions
+- Structure README sections logically: overview, installation, usage, contributing
+- Write scannable content with proper headings and formatting
+- Add appropriate badges, links, and navigation elements
+- Use relative links (e.g., `docs/CONTRIBUTING.md`) instead of absolute URLs for files within the repository
+- Make links descriptive and add alt text to images
+</code></pre>
+<aside class="special"><p>You can create as many specific agents as you want.</p>
+</aside>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Unit Tests and Code Quality" duration="15">
         <h2 is-upgraded>Step 1. Enable CodeQL and Code Quality</h2>
-<p>TBA</p>
+<p>[TBA]</p>
 <h2 is-upgraded>Step 2. Create Unit Tests</h2>
 <p>We can ask Copilot to create unit tests. For example, we can enter this prompt to do that:</p>
 <pre><code language="language-text" class="language-text">We want to add unit testing to this project.
@@ -347,17 +401,6 @@ Then in the readme file, add explanation on how to run the unit tests.
 <p class="image-container"><img alt="Unit test request" src="img/98effe6470e40459.png"></p>
 <p>We can ask Copilot to run the test from the Chat panel. This way it will check the result from the terminal automatically and make adjustments as necessary. We can always do it manually by referring to the added section in the readme file.</p>
 <p class="image-container"><img alt="Unit test result" src="img/17d4ce778a3947c9.png"></p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Product Documentation" duration="5">
-        <p>Let&#39;s ask Copilot to add more documentations:</p>
-<pre><code language="language-text" class="language-text">Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.
-</code></pre>
-<p>We can use your favorite markdown viewer plugin to check the result, including the charts. Because the charts are created using Mermaid, you can also copy-paste the Mermaid code into Mermaid&#39;s tool.</p>
-<p class="image-container"><img alt="App documentation" src="img/af32d8f4c778e3ab.png"></p>
-<p class="image-container"><img alt="App documentation" src="img/409e46bf3650b89c.png"></p>
 
 
       </google-codelab-step>

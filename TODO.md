@@ -13,7 +13,7 @@
 - use Copilot Space to ask questions about the project
 - use Copilot Space to generate the plan.md file
 
-### 3. Prompt File and Custom Agents ???
+### 3. Prompt File and Custom Agents (= = = = = DONE = = = = =)
 - create prompt file: eg. unit test, code explainer
 - create pre-built agents (already in the repo's `.github/`): eg. API agent, documentation maker
 - create a custom agent: eg. Readme specialist
@@ -27,7 +27,7 @@
 - add a new task (eg. add logging feature) from the Agents' tab while another agent is working on the previous issue
 
 ### 6. Code Review Agent
-- Ask an agent to do a review (I think we covered this)
+- Ask an agent to do a review
 - Ask agent to generate unit tests to improve overall Code Quality. So we need to check code quality BEFORE and AFTER the prompt
 - Just provide screenshots, to make sure non-enterprise account users can see the feature in action
 

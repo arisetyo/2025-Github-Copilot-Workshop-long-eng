@@ -184,7 +184,7 @@ Verify the setting is correctly applied:
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE XX = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 04 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Initialize The Repo
 Duration: 10
@@ -195,12 +195,22 @@ Follow the instructions in the `README.md` file to install `uv` (if you don't ha
 
 ### Github MCP
 
+1. From Github MCP Registry
+
+Go to [Github MCP Registry](https://github.com/mcp/) and search for Github MCP.
+
+Click `Install in VS Code`.
+
+![Github MCP Registry](github-copilot-workshop-id/img/__github_mcp-reg.png)
+
+2. From VSCode
+
 Install the [Github MCP Server](https://github.com/mcp/github/github-mcp-server) in VSCode
 
 ![Github MCP Server](github-copilot-workshop-id/img/__github_mcp.png)
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE XX = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 05 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Github Copilot Spaces
 Duration: 10
@@ -258,7 +268,7 @@ By doing so, you can reference the same architectural content even if you open a
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE 05 = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 06 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Planning The Application
 Duration: 10
@@ -278,16 +288,17 @@ Then, enter the following prompt:
 ```text
 Based on the attached document, please create step-by-step development plan that can be followed by the coding agents.
 Please suggest what granularity should be used to implement functions in an easy-to-test steps.
-Save the development plan in a file called `plan.md`.
 ```
 
 > aside positive
 >
 > If there are points that should be improved or considerations that are lacking in this plan, try pointing them out. For example, the following suggestion: "Considering the ease of unit testing, please also list any improvements or additions needed to the current plan."
 
-> aside negative
->
-> Don't forget to click "Keep" to save the changes.
+Change to `Agent` mode and prompt: "Save the development plan in a file called `plan.md`." (or you can always do that manually). Don't forget to click "Keep" to save the changes. 
+
+![Planning](github-copilot-workshop-id/img/__new-plan.png)
+
+Now we have two specifications file: `architecture.md` and `plan.md`. These will be the documents Copilot refer to in developing the Pomodoro app.
 
 > aside positive
 >
@@ -295,7 +306,7 @@ Save the development plan in a file called `plan.md`.
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE 08 = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 07 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Custom Instructions
 Duration: 5
@@ -312,7 +323,16 @@ Before making any big changes to the project, always check the architecture docu
 
 > aside positive
 >
-> Note on the screenshot above that Copilot also provide some inline suggestions. You can add Copilot suggestions or your own instruction to this to make Copilot works better in your project. You can add lines like "Always add documentation to all new functions." for example.
+> Note on the screenshot above that Copilot also provide some inline suggestions. You can add Copilot suggestions or your own instruction to this to make Copilot works better in your project. You can add lines like  for example.
+
+That custom instruction tells Copilot to:
+
+1. Make sure to run the Python file in an activated virtual environment
+2. Always check the architecture document before making any big changes
+
+You can add other things in that file that you want Copilot to do with each request, for example: "Always add documentation to all new functions.".
+
+Here are some great examples of prompts that you can use, modify, and adjust for your custom instructions: [Godlike Prompts](https://copilot-instructions.md/prompts.html)
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 08 = = = = = = = = = = = = = -->
@@ -339,22 +359,16 @@ Once implementation is complete, check the following points:
 2. **Basic Files**: Are the necessary basic files (app.py, HTML templates, CSS files, etc.) created?
 3. **Operation Check**: Perform simple operation tests to see if any errors occur?
 
-> aside negative
->
-> Copilot could sometimes forget to activate the virtual environment. Just tell it to activate venv and run the Python application on the same terminal if it forgot to do that.
-
 Below is the result of step 1 implementation in my case. What kind of application this becomes at this stage will differ from person to person.
 
-![Example Implementation from Copilot](github-copilot-workshop-id/img/__result-1.png)
-
-![Example Result](github-copilot-workshop-id/img/__result-2.png)
+![Result](github-copilot-workshop-id/img/__result-2.png)
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 09 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Explain Code
-Duration: 10
+Duration: 5
 
 Let's have Copilot Chat explain this code.
 
@@ -381,54 +395,102 @@ Confirm the chat mode is set to "Ask".
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 10 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Custom Instructions
-Duration: 10
+## Product Documentation
+Duration: 5
 
-### Create Custom Copilot Instruction
-
-Let's create a [custom instruction](https://copilot-instructions.md/) that Copilot will follow before executing prompts in chat.
-
-```bash
-mkdir .github && cd .github
-touch copilot-instructions.md
-```
-
-Then, inside the file `copilot-instructions.md`, put this text:
+Let's ask Copilot to add more documentations:
 
 ```text
-**Prompt:**
-Always ensure that any Python command is run inside an activated virtual environment (`.venv`).
-Before running a Python command, activate the virtual environment using:
-
-source .venv/bin/activate
-
-Then run your Python command as needed.
-
-**Instruction:**
-Before making any big changes to the project, always check the architecture documentation in `docs/architecture.md` to ensure alignment with the overall design and goals.
+Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.
 ```
 
-That custom instruction tells Copilot to:
+We can use your favorite markdown viewer plugin to check the result, including the charts.
+Because the charts are created using Mermaid, you can also copy-paste the Mermaid code into Mermaid's tool.
 
-1. Make sure to run the Python file in an activated virtual environment
-2. Always check the architecture document before making any big changes
+![App documentation](github-copilot-workshop-id/img/__docs-1.png)
 
-![Custom instructions](github-copilot-workshop-id/img/__custom.png)
+![App documentation](github-copilot-workshop-id/img/__docs-2.png)
 
-You can add other things that you want Copilot to do with each request in that file.
-
-Here are some examples of great prompts that you can use, modify, and adjust: [Godlike Prompts](https://copilot-instructions.md/prompts.html)
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 11 = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+## Prompt Files and Custom Agents (Optional)
+Duration: 10
+
+### Prompt Files
+
+Prompt files define reusable prompts for specific tasks that you can invoke when needed.
+
+#### Create a "code explainer" agent
+
+1. Create a file: `.github/prompts/explain-code.prompt.md`
+2. Add this into the file:
+
+```text
+---
+agent: 'agent'
+description: 'Generate a clear code explanation with examples'
+---
+
+Explain the following code in a clear, beginner-friendly way:
+
+Code to explain: ${input:code:Paste your code here}
+Target audience: ${input:audience:Who is this explanation for? (e.g., beginners, intermediate developers, etc.)}
+
+Please provide:
+
+* A brief overview of what the code does
+* A step-by-step breakdown of the main parts
+* Explanation of any key concepts or terminology
+* A simple example showing how it works
+* Common use cases or when you might use this approach
+
+Use clear, simple language and avoid unnecessary jargon.
+```
+
+![Explainer](github-copilot-workshop-id/img/__explainer.png)
+
+### Custom Agents
+
+Other than the default agent provided by Copilot, you can create your own custom agent for specific use case.
+
+#### Create a "readme creator" agent
+
+1. Create a file: `.github/agents/readme-creator-agent.md`
+2. Add this into the file:
+
+```text
+---
+name: readme-creator
+description: Agent specializing in creating and improving README files
+---
+
+You are a documentation specialist focused on README files. Your scope is limited to README files or other related documentation files only - DO NOT modify or analyze code files.
+
+Focus on the following instructions:
+- Create and update README.md files with clear project descriptions
+- Structure README sections logically: overview, installation, usage, contributing
+- Write scannable content with proper headings and formatting
+- Add appropriate badges, links, and navigation elements
+- Use relative links (e.g., `docs/CONTRIBUTING.md`) instead of absolute URLs for files within the repository
+- Make links descriptive and add alt text to images
+```
+
+> aside positive
+>
+> You can create as many specific agents as you want.
+
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 12 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Unit Tests and Code Quality
 Duration: 15
 
 ### Step 1. Enable CodeQL and Code Quality
 
-TBA
+[TBA]
 
 ### Step 2. Create Unit Tests
 
@@ -451,26 +513,6 @@ We can always do it manually by referring to the added section in the readme fil
 
 ![Unit test result](github-copilot-workshop-id/img/__ut-result.png)
 
-
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE 12 = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Product Documentation
-Duration: 5
-
-Let's ask Copilot to add more documentations:
-
-```text
-Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.
-```
-
-We can use your favorite markdown viewer plugin to check the result, including the charts.
-Because the charts are created using Mermaid, you can also copy-paste the Mermaid code into Mermaid's tool.
-
-![App documentation](github-copilot-workshop-id/img/__docs-1.png)
-
-
-![App documentation](github-copilot-workshop-id/img/__docs-2.png)
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
