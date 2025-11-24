@@ -195,7 +195,7 @@ Verify the setting is correctly applied:
 <!-- = = = = = = = = = = = = =  SLIDE 04 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Initialize The Repo
-Duration: 10
+Duration: 5
 
 ### Python prerequisites
 
@@ -279,7 +279,7 @@ By doing so, you can reference the same architectural content even if you open a
 <!-- = = = = = = = = = = = = =  SLIDE 06 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Planning The Application
-Duration: 10
+Duration: 15
 
 In using Copilot it is not recommended to try implement a large feature all at once. It is better to start implementing in small increments. This improves the accuracy of the code Copilot suggests and allows for smoother development progress.
 
@@ -302,7 +302,17 @@ Please suggest what granularity should be used to implement functions in an easy
 >
 > If there are points that should be improved or considerations that are lacking in this plan, try pointing them out. For example, the following suggestion: "Considering the ease of unit testing, please also list any improvements or additions needed to the current plan."
 
-Change to `Agent` mode and prompt: "Save the development plan in a file called `plan.md`." (or you can always do that manually). Don't forget to click "Keep" to save the changes. 
+1. Change to `Agent` mode
+
+![Agent mode](github-copilot-workshop-id/img/__agent-mode.png)
+
+2. Enter this prompt: 
+
+```text
+Save the development plan in a file called `plan.md`.
+```
+
+(or you can always do that manually). Don't forget to click "Keep" to save the changes. 
 
 ![Planning](github-copilot-workshop-id/img/__new-plan.png)
 
@@ -393,8 +403,13 @@ Confirm the chat mode is set to "Ask".
 
 ### Request File Explanation
 
-1. Attach one of the files in the chat field.
-2. Enter the prompt "Please explain this entire file."
+1. Attach the main file in the chat field. Depending on the result from the previous steps, it could be `app.py` or `main.py` or `server.py`. Check the result of your prompt to make sure.
+2. Enter the prompt:
+
+```text
+Please explain this entire file.
+```
+
 3. Press Enter and Copilot Chat will explain the entire file
 
 ![Explanation from Copilot](github-copilot-workshop-id/img/__ask-2.png)
@@ -406,10 +421,10 @@ Confirm the chat mode is set to "Ask".
 ## Product Documentation
 Duration: 5
 
-Let's ask Copilot to add more documentations:
+Make sure Copilot Chat is in **Agent** mode. Let's ask Copilot to add more documentations:
 
 ```text
-Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.
+Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format. Save it as a markdown file.
 ```
 
 We can use your favorite markdown viewer plugin to check the result, including the charts.
@@ -425,7 +440,7 @@ Because the charts are created using Mermaid, you can also copy-paste the Mermai
 <!-- = = = = = = = = = = = = =  SLIDE 11 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Prompt Files and Custom Agents (Optional)
-Duration: 10
+Duration: 15
 
 ### Prompt Files
 
@@ -498,6 +513,10 @@ And once you've committed the agent definition to `main` branch, you can also ac
 
 ![Copilot Online](github-copilot-workshop-id/img/__agent-cpo.png)
 
+> aside positive
+>
+> Be creative, try creating some custom prompts and agents.
+
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 12 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -520,9 +539,9 @@ You can check the result of the action executed by Code quality in the `Actions`
 
 ### Step 2. Create Unit Tests
 
-First, let's create a new branch called `feature/unit-tests`.
+First, let's create a new branch called `feature/unit-tests` from the `main` branch.
 
-We can ask Copilot to create unit tests for our application. Enter this prompt to start creating unit tests:
+We can ask Copilot Chat in VSCode to create unit tests for our application. Enter this prompt to start creating unit tests:
 
 ```text
 We want to add unit testing to this project.
@@ -558,6 +577,10 @@ Let's see some of the things Copilot can do for us in the Github website.
 ### 1. Add PR Summary
 
 We can ask Copilot to add Pull Request description.
+
+1. Commit the changes from the previous slide.
+2. Push to your repo.
+3. Open your Github repo page, create a new Pull Request.
 
 ![Request PR summary](github-copilot-workshop-id/img/__pr-summary.png)
 
@@ -600,6 +623,10 @@ After the Pull Request is opened, you can view Copilot Code Review results:
 >
 > **Note**: Depending on the PR size, you might need to wait for Copilot to finish creating a summary or adding PR reviews.
 
+> aside positive
+>
+> **Pro Tip**: not confidence about your PR? Anxious that the senior devs are going to roast your PR? Let Copilot review your PR first, before you add other reviewers.
+
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 15 = = = = = = = = = = = = = -->
@@ -608,6 +635,10 @@ After the Pull Request is opened, you can view Copilot Code Review results:
 Duration: 15
 
 Let's use the website version of GitHub Copilot to automatically generate project improvement suggestions as Issues and utilize Coding Agent.
+
+First, make sure **Issues** is enabled in your Github repository's **Settings**.
+
+![Issues Enabled](github-copilot-workshop-id/img/__issues-enabled.png)
 
 ### Automatic Issue Creation with GitHub Copilot
 
@@ -703,7 +734,7 @@ Add your review and then merge the PR.
 <!-- = = = = = = = = = = = = =  SLIDE 17 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Deploy to Azure (Optional)
-Duration: 5
+Duration: 10
 
 Let's deploy our work online. Before we start, login to Azure via the command line.
 
@@ -711,10 +742,10 @@ Let's deploy our work online. Before we start, login to Azure via the command li
 az login
 ```
 
-Then, enter this prompt to start the deployment process.
+Then, enter this prompt to start the deployment process. Make sure Copilot Chat is in **Agent** mode.
 
 ```text
-Deploy this app to Azure App Service using Free Tier to be deployed in Region of Indonesia Central. Please use the following Subscription 'Visual Studio Enterprise Subscription' and create a new Resource Group called 'POMODORO_DEPLOY'. Use Azure CLI to execute.
+Deploy this app to Azure App Service using Free Tier to be deployed in Region of Indonesia Central. Please use the following Subscription '<THE NAME OF THE PROVIDED SUBSCRIPTION>' and create a new Resource Group called 'POMODORO_DEPLOY'. Use Azure CLI to execute.
 ```
 
 ![Azure Deployment Start](github-copilot-workshop-id/img/__az-start.png)
