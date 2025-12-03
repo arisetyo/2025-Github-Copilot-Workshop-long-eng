@@ -17,6 +17,10 @@ Duration: 5
 Welcome to the GitHub Copilot Workshop! In this workshop, you will learn how to use GitHub Copilot to explain and improve code.
 GitHub Copilot Chat enables interactive dialogue with AI through a chat experience. Let's learn how to use GitHub Copilot through this workshop!
 
+> aside positive
+>
+> You can access this slides at [https://stghuniverse.z45.web.core.windows.net/#0](https://stghuniverse.z45.web.core.windows.net/#0) or [https://bit.ly/GitHubRecapJkt2025](https://bit.ly/GitHubRecapJkt2025)
+
 ![GitHub Copilot Logo](github-copilot-workshop-id/img/__octocat_copilot.png)
 
 ### Today's Goals
@@ -46,7 +50,7 @@ Duration: 15
 
 This workshop uses the following GitHub repository:
 
-**Project URL**: [https://github.com/eComindo/2025-github-ur-copilot-workshop](https://github.com/eComindo/2025-github-ur-copilot-workshop)
+**Project URL (example)**: [https://github.com/indohackghcp1-org/workshop-material](https://github.com/indohackghcp1-org/workshop-material)
 
 ### Step 1: Fork the Repository
 
@@ -56,6 +60,10 @@ First, open the project URL above in your browser and fork the repository:
 2. Click the **Fork** button in the top right
 
 ![Click Fork button](github-copilot-workshop-id/img/__fork-step1.png)
+
+> aside positive
+>
+> Make sure to select the organization as repo owner. And to make the new repo unique, add your username after the name of the repo, eg. `indohackghcp1-org/workshop-material-<your_username>`
 
 3. Click the `Create fork button` on the fork creation screen. Once the fork is complete, a copy of the repository will be created in your GitHub account.
 
@@ -83,13 +91,13 @@ If you have VSCode installed locally:
 2. Clone your forked repository with the following command:
 
 ```bash
-git clone https://github.com/[your-username]/2025-github-ur-copilot-workshop.git
+git clone https://github.com/[your-assigned-organization]/workshop-material.git
 ```
 
 3. Navigate to the cloned directory:
 
 ```bash
-cd 2025-github-ur-copilot-workshop
+cd workshop-material
 ```
 
 4. Open the project in VSCode
@@ -745,7 +753,7 @@ az login
 Then, enter this prompt to start the deployment process. Make sure Copilot Chat is in **Agent** mode.
 
 ```text
-Deploy this app to Azure App Service using Free Tier to be deployed in Region of Indonesia Central. Please use the following Subscription '<THE NAME OF THE PROVIDED SUBSCRIPTION>' and create a new Resource Group called 'POMODORO_DEPLOY'. Use Azure CLI to execute.
+Deploy this app to Azure App Service using Free Tier to be deployed in Region of Indonesia Central with the name of '<YOUR ASSIGNED USERNAME>-pomodoro-app'. Use this command 'az login --service-principal --username 6ed8d370-8b9d-41da-9aba-c58147a6165d --password IqP8Q~EIohH7E4AbbTv95_Z6VQN8ECCCXWy2ea0e --tenant c7c10bba-9d93-4e42-b587-0e98f5ba08f8' and use the IndGHCPDeployment-RG resource group. Deploy this manually (zip) no need to use git or CI/CD.
 ```
 
 ![Azure Deployment Start](github-copilot-workshop-id/img/__az-start.png)
