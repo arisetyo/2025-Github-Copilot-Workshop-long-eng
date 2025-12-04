@@ -71,6 +71,22 @@ First, open the project URL above in your browser and fork the repository:
 
 Using your forked repository, you can start the project using one of the following methods:
 
+#### Method A: Use "GitHub Codespaces"
+
+1. On your forked repository page from the previous step, click the green **Code** button
+3. Select the **Codespaces** tab
+4. Click **Create codespace on main**
+
+![Codespaces Setup](github-copilot-workshop-id/img/__github-codespaces.png)
+
+> aside positive
+>
+> **Tip**: Using Codespaces launches a VS Code-like environment in your browser, allowing you to start development immediately.
+
+#### Method B: Clone to Local Environment
+
+If you have VSCode installed locally:
+
 1. Open Terminal or Command Prompt
 2. Clone your forked repository with the following command:
 
@@ -86,12 +102,20 @@ cd workshop-material
 
 4. Open the project in VSCode
 
+### Step 3: Workspace Setup (Optional)
+
+After opening the project, please install the following extensions (if you haven't):
+
+1. Install **GitHub Copilot** extension
+2. Install **GitHub Copilot Chat** extension
+3. Install **Python** extension
+
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 03 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Create Working Branch
-Duration: 5
+## Configuration Check
+Duration: 10
 
 ### Branch Preparation
 
@@ -105,17 +129,85 @@ git checkout -b feature/pomodoro
 2. Confirm that Copilot functionality is enabled
 3. Confirm that the Python interpreter is set up correctly
 
+### Next Edit Suggestions Setup
+
+⚙️ [`github.copilot.nextEditSuggestions.enabled`](vscode://settings/github.copilot.nextEditSuggestions.enabled) is a setting that enables GitHub Copilot's next-generation edit suggestion feature. This feature allows you to receive more advanced code editing suggestions.
+
+### 1. Open VS Code
+
+### 2. Access Settings
+Open the settings screen using one of the following methods:
+
+#### Method A: From Menu
+- **Windows/Linux**: `File` → `Preferences` → `Settings`
+- **macOS**: `Code` → `Settings...` → `Settings`
+
+#### Method B: Keyboard Shortcut
+- **Windows/Linux**: `Ctrl + ,`
+- **macOS**: `Cmd + ,`
+
+#### Method C: Command Palette
+- `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (macOS)
+- Select `Preferences: Open Settings (UI)`
+
+### 3. Search Settings
+Enter the following in the settings search box:
+```text
+github.copilot.nextEditSuggestions.enabled
+```
+
+### 4. Enable Setting
+- Check the checkbox for the setting item shown in search results
+- Or change `false` to `true`
+
+### 5. Confirm Setting
+Verify the setting is correctly applied:
+- Restart VSCode (recommended)
+- Edit code in the editor and confirm the new suggestion feature works
+
+### Alternative Method: Direct Edit in settings.json
+
+#### 1. Open settings.json file
+- `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (macOS)
+- Select `Preferences: Open User Settings (JSON)`
+
+#### 2. Add Setting
+```json
+{
+    "github.copilot.nextEditSuggestions.enabled": true
+}
+```
+
+#### 3. Save File
+- `Ctrl + S` (Windows/Linux) or `Cmd + S` (macOS)
+
 ### Important Notes
 
 - Make sure VSCode's GitHub Copilot extension is updated to the latest version
 - Restarting VSCode is recommended after setting changes
 
+### Troubleshooting
+
+#### If Settings Are Not Found
+1. Confirm GitHub Copilot extension is installed
+2. Confirm extension is updated to the latest version
+3. Restart VSCode and try again
+
+#### If Functionality Doesn't Work
+1. Confirm you are logged in to GitHub Copilot
+2. Check internet connection
+3. Check VSCode console for error messages
+
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 04 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## MCP Registry (Optional)
+## Initialize The Repo
 Duration: 5
+
+### Python prerequisites
+
+Follow the instructions in the `README.md` file to install `uv` (if you don't have it yet) and to create the virtual environment.
 
 ### Github MCP
 
@@ -137,7 +229,7 @@ Install the [Github MCP Server](https://github.com/mcp/github/github-mcp-server)
 <!-- = = = = = = = = = = = = =  SLIDE 05 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Github Copilot Spaces
-Duration: 15
+Duration: 10
 
 Before we start the development, let's go to [Copilot Spaces](https://github.com/copilot/spaces).
 
@@ -243,7 +335,7 @@ Now we have two specifications file: `architecture.md` and `plan.md`. These will
 <!-- = = = = = = = = = = = = =  SLIDE 07 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Custom Instructions
-Duration: 10
+Duration: 5
 
 Before we start implementing the plan using Copilot, let's update the [custom instruction](https://docs.github.com/en/copilot/tutorials/customization-library/custom-instructions/your-first-custom-instructions) file.
 
@@ -266,10 +358,7 @@ That custom instruction tells Copilot to:
 
 You can add other things in that file that you want Copilot to do with each request, for example: "Always add documentation to all new functions.".
 
-Here are some great examples of prompts that you can use, modify, and adjust for your custom instructions:
-- [Awesome Copilot](https://github.com/github/awesome-copilot)
-- [Godlike Prompts](https://copilot-instructions.md/prompts.html)
-
+Here are some great examples of prompts that you can use, modify, and adjust for your custom instructions: [Godlike Prompts](https://copilot-instructions.md/prompts.html)
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 08 = = = = = = = = = = = = = -->
@@ -304,7 +393,7 @@ Below is the result of step 1 implementation in my case. What kind of applicatio
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 09 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Explain Code (Optional)
+## Explain Code
 Duration: 5
 
 Let's have Copilot Chat explain this code.
@@ -338,7 +427,7 @@ Please explain this entire file.
 <!-- = = = = = = = = = = = = =  SLIDE 10 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Product Documentation
-Duration: 10
+Duration: 5
 
 Make sure Copilot Chat is in **Agent** mode. Let's ask Copilot to add more documentations:
 
@@ -353,15 +442,12 @@ Because the charts are created using Mermaid, you can also copy-paste the Mermai
 
 ![App documentation](github-copilot-workshop-id/img/__docs-2.png)
 
-> aside positive
->
-> Recommended extension for previewing markdown document with Mermaid support: [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 11 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Prompt Files and Custom Agents
+## Prompt Files and Custom Agents (Optional)
 Duration: 15
 
 ### Prompt Files
@@ -399,7 +485,7 @@ Use clear, simple language and avoid unnecessary jargon.
 
 ### Custom Agents
 
-Other than the default agent provided by Copilot, you can create your own custom agent for specific use case. By defining a custom agent's role, not only it increases the context and specificity of an agent, it also add guard-rails to what an agent can and cannot do.
+Other than the default agent provided by Copilot, you can create your own custom agent for specific use case.
 
 #### Create a "readme creator" agent
 
@@ -437,19 +523,19 @@ And once you've committed the agent definition to `main` branch, you can also ac
 
 > aside positive
 >
-> Be creative, try creating some custom prompts and agents. You can create "React frontend specialist" agent or a "Golang backend specialist agent", for example.
+> Be creative, try creating some custom prompts and agents.
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 12 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Code Quality (Optional)
-Duration: 5
+## Unit Tests and Code Quality
+Duration: 15
 
-Merge all of our changes to the `main` branch. Code quality feature will checks the code in your `main` branch and all PRs targeting the `main` branch.
+### Step 1. Enable CodeQL and Code Quality
 
-**Make sure CodeQL and Code Quality are enabled**
+Merge all of our changes to the `main` branch.
 
-Then in your repo, go to `Settings` → `Code quality`. Click on `Enable code quality` button (if not already).
+Then in your repo, go to `Settings` → `Code quality`. Click on `Enable code quality` button.
 
 If you've already merged your codes to `main` branch, it will automatically execute a scan.
 
@@ -459,12 +545,7 @@ You can check the result of the action executed by Code quality in the `Actions`
 
 ![Actions](github-copilot-workshop-id/img/__cq-actions.png)
 
-
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE 13 = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Unit Tests
-Duration: 10
+### Step 2. Create Unit Tests
 
 First, let's create a new branch called `feature/unit-tests` from the `main` branch.
 
@@ -492,7 +573,7 @@ We can always do it manually by referring to the added section in the readme fil
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 14 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## PR Summary and Review Using Copilot
+## Automatic PR Summary and Review
 Duration: 10
 
 Copilot is also available on Github's website. Click on [this link](https://github.com/copilot/) to open Copilot on Github.
@@ -558,7 +639,7 @@ After the Pull Request is opened, you can view Copilot Code Review results:
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 15 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Issue Creation and Coding Agent Using Copilot
+## Automatic Issue Creation and Coding Agent
 Duration: 15
 
 Let's use the website version of GitHub Copilot to automatically generate project improvement suggestions as Issues and utilize Coding Agent.
@@ -633,8 +714,8 @@ When Coding Agent is assigned, the following results can be expected:
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 16 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Review PR From Coding Agent
-Duration: 5
+## Implement PR From Coding Agent
+Duration: 10
 
 After assigning the issues to an agent, Copilot will automatically create a branch, a pull request, complete with a detailed description of changes it makes to address the issue.
 
@@ -661,7 +742,7 @@ Add your review and then merge the PR.
 <!-- = = = = = = = = = = = = =  SLIDE 17 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Deploy to Azure (Optional)
-Duration: 5
+Duration: 10
 
 Let's deploy our work online. Before we start, login to Azure via the command line.
 
@@ -698,7 +779,6 @@ In this workshop, we learned using Github Copilot to do the following:
 
 - Using specifications to develop an application
 - Code explanation and improvement
-- Creating documentation and unit tests
 - Utilizing agent functionality
 - Adding issues and development of new features
 
