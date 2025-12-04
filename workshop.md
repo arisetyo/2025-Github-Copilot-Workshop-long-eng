@@ -669,12 +669,11 @@ Let's deploy our work online. Before we start, login to Azure via the command li
 az login
 ```
 
-Then, enter this prompt to start the deployment process. Make sure Copilot Chat is in **Agent** mode.
+Then, enter the prompt provided by the workshop to start the deployment process. Make sure Copilot Chat is in **Agent** mode.
 
-> aside negative
-> 
-> REMOVED BECAUSE BLOCKED ON PUSH
-
+> aside positive
+>
+> Please ask the workshop facilitators for the prompt that contain Azure credentials.
 
 ![Azure Deployment Start](github-copilot-workshop-id/img/__az-start.png)
 
