@@ -558,8 +558,8 @@ After the Pull Request is opened, you can view Copilot Code Review results:
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = =  SLIDE 15 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Issue Creation and Coding Agent Using Copilot
-Duration: 15
+## Issue Creation Using Copilot
+Duration: 10
 
 Let's use the website version of GitHub Copilot to automatically generate project improvement suggestions as Issues and utilize Coding Agent.
 
@@ -602,7 +602,15 @@ Test purpose: Measure the impact of gamification elements on motivation maintena
 
 ![The Issues](github-copilot-workshop-id/img/__create-issues.png)
 
-### Issue Creation and Coding Agent Assignment
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 16 = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+## Assign Coding Agent
+Duration: 10
+
+### Issue Creation
+
+After the issues are created, click the `Create` button to create an an item in your repository's Issue section.
 
 1. **Copilot automatically generates 3 Issues**
 
@@ -613,11 +621,12 @@ Test purpose: Measure the impact of gamification elements on motivation maintena
 
 ![The Issues](github-copilot-workshop-id/img/__the-issues.png)
 
-4. After transitioning to the Issue screen, select **Copilot** in the **Assignees** section to assign the Coding Agent
+
+### Coding Agent Assignment
+
+After transitioning to the Issue screen, select **Copilot** in the **Assignees** section to assign the Coding Agent
 
 ![Assign Coding Agent to Issue](github-copilot-workshop-id/img/__assign-issues.png)
-
-### Expected Pull Request Results
 
 When Coding Agent is assigned, the following results can be expected:
 
@@ -628,15 +637,6 @@ When Coding Agent is assigned, the following results can be expected:
 > aside positive
 >
 > **Utilizing MCP Server**: GitHub MCP Server and Playwright MCP Server are included as initial settings in Coding Agent. This allows not only unit testing but also automatic UI checking through screenshots. Coding Agent visually verifies that implemented functions work as expected and provides higher quality code.
-
-
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE 16 = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-## Review PR From Coding Agent
-Duration: 5
-
-After assigning the issues to an agent, Copilot will automatically create a branch, a pull request, complete with a detailed description of changes it makes to address the issue.
 
 You can check the progress of Copilot in addressing the issues in **Pull requests** page.
 
@@ -650,15 +650,20 @@ After a few minutes, depending on the task size, we can see the changes complete
 
 Add your review and then merge the PR.
 
-> aside positive
->
-> From the Agents page on Copilot online, you can delegate a coding agent to work on a new task while other coding agents are working on the previous issues.
+
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 17 = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+## Coding Agents Monitoring
+Duration: 5
+
+From the Agents page on Copilot online, you can delegate a coding agent to work on a new task while other coding agents are working on the previous issues.
 
 ![New Issue](github-copilot-workshop-id/img/__issue-new.png)
 
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-<!-- = = = = = = = = = = = = =  SLIDE 17 = = = = = = = = = = = = = -->
+<!-- = = = = = = = = = = = = =  SLIDE 18 = = = = = = = = = = = = = -->
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 ## Deploy to Azure (Optional)
 Duration: 5
