@@ -672,7 +672,7 @@ az login
 Then, enter this prompt to start the deployment process. Make sure Copilot Chat is in **Agent** mode.
 
 ```text
-Deploy this app to Azure App Service using Free Tier to be deployed in Region of Indonesia Central with the name of '<YOUR ASSIGNED USERNAME>-pomodoro-app'. Use this command 'az login --service-principal --username 6ed8d370-8b9d-41da-9aba-c58147a6165d --password IqP8Q~EIohH7E4AbbTv95_Z6VQN8ECCCXWy2ea0e --tenant c7c10bba-9d93-4e42-b587-0e98f5ba08f8' and use the IndGHCPDeployment-RG resource group. Deploy this manually (zip) no need to use git or CI/CD.
+Deploy this app to Azure App Service using Free Tier to be deployed in Region of Indonesia Central with the name of '<YOUR ASSIGNED USERNAME>-pomodoro-app'. Use this command 'az login --service-principal --username <ASSIGNED-USERNAME> --password <ASSIGNED-PASSWORD> --tenant <ASSIGNED-TENANT>' and use the IndGHCPDeployment-RG resource group. Deploy this manually (zip) no need to use git or CI/CD.
 ```
 
 ![Azure Deployment Start](github-copilot-workshop-id/img/__az-start.png)
