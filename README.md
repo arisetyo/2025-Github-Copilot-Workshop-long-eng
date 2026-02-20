@@ -13,3 +13,7 @@ Example:
 The value of `id` in the header of the markdown file determines the name of folder for the built HTML file.
 
 On the github workflow, the file that will be built is the `workshop.md` file. So if you need it to be deployed online, make sure the latest one is `workshop.md`.
+Push to `upstream` ([https://github.com/eComindo/2025-Github-Copilot-Workshop-long-eng](https://github.com/eComindo/2025-Github-Copilot-Workshop-long-eng)) to build in the build site mentioned above.
+```
+git push upstream
+```
