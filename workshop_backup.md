@@ -1,6 +1,6 @@
 author: Arie M. Prasetyo
 summary: GitHub Copilot Workshop for Github Universe Recap 2025 Jakarta Indonesia
-id: github-copilot-workshop-id
+id: github-copilot-workshop-backup
 categories: AI, Development
 environments: Web
 status: Published
