@@ -30,6 +30,10 @@ Tech stack:
 - Testing: Jest + Playwright
 - Design: Figma + Figma MCP
 
+> aside positive
+>
+> You can access this slides at [https://stghuniverse.z45.web.core.windows.net/#0](https://stghuniverse.z45.web.core.windows.net/#0) or [https://bit.ly/GitHubRecapJkt2025](https://bit.ly/GitHubRecapJkt2025)
+
 ---
 
 <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
